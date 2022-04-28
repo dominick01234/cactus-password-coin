@@ -1,0 +1,37 @@
+
+
+run '(sha256 cactusiscool)'
+0x94cad43f3728e93cf130d80bc546fdda376257ea60f9b290cf8e4223e937abd5
+
+cdv clsp build ./password/password.clsp
+
+cdv clsp curry ./password/password.clsp.hex -a 0x94cad43f3728e93cf130d80bc546fdda376257ea60f9b290cf8e4223e937abd5
+
+cdv clsp curry ./password/password.clsp.hex -a 0x94cad43f3728e93cf130d80bc546fdda376257ea60f9b290cf8e4223e937abd5 --treehash
+
+treehash: 62ac88127f0ca9d88297d04a7d087061dc408010b3dcc38ba2a1c4c7ece6a104
+
+cdv encode 62ac88127f0ca9d88297d04a7d087061dc408010b3dcc38ba2a1c4c7ece6a104 --prefix cac
+
+Coin Address: cac1v2kgsynlpj5a3q5h6p986zrsv8wypqqsk0wv8zaz58zv0m8x5yzqnl48re
+
+#deploy coin to Cactus Blockchain
+cactus wallet send -a 0.0000000005 -t cac1v2kgsynlpj5a3q5h6p986zrsv8wypqqsk0wv8zaz58zv0m8x5yzqnl48re
+
+#Check send success
+cdv rpc coinrecords --by puzzlehash 62ac88127f0ca9d88297d04a7d087061dc408010b3dcc38ba2a1c4c7ece6a104
+
+#Create Spend bundle and spend the coin we created, sending it back to ourselves
+parent_coin_info, puzzle_hash, amount, 
+
+puzzle_reveal
+cdv clsp curry ./password/password.clsp.hex -a 0x94cad43f3728e93cf130d80bc546fdda376257ea60f9b290cf8e4223e937abd5 -x
+
+#solution: password, receive_puzzlehash, amount
+Receive Puzzle Hash: cdv decode cac1fkfknnm3ld3f7nnuu3kkrkpzl0fyp5fje9lwduntntx28y7qvsgsk957j0
+4d9369cf71fb629f4e7ce46d61d822fbd240d132c97ee6f26b9acca393c06411
+
+Binary representation of solution: opc '(cactusiscool 0x4d9369cf71fb629f4e7ce46d61d822fbd240d132c97ee6f26b9acca393c06411 500)'
+
+ff8c6361637475736973636f6f6cffa04d9369cf71fb629f4e7ce46d61d822fbd240d132c97ee6f26b9acca393c06411ff8201f480
+

@@ -1,10 +1,10 @@
 import hashlib
 
-from chia.types.blockchain_format.program import Program
-from chia.util.bech32m import encode_puzzle_hash
+from cactus.types.blockchain_format.program import Program
+from cactus.util.bech32m import encode_puzzle_hash
 from cdv.util.load_clvm import load_clvm
 
-# Load the Chialisp puzzle code
+# Load the Cactuslisp puzzle code
 PASSWORD_MOD = load_clvm("password.clsp", "password")
 
 
@@ -22,7 +22,7 @@ def create_coin_treehash(PASSWORD_HASH):
     return create_coin_puzzle(PASSWORD_HASH).get_tree_hash()
 
 
-def create_coin_txaddress(PASSWORD_HASH, address_prefix='txch'):
+def create_coin_txaddress(PASSWORD_HASH, address_prefix='cac'):
     """ Return puzzle address
     """
 

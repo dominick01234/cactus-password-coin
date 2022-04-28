@@ -1,8 +1,8 @@
 import pytest
 
 from typing import List, Optional
-from chia.types.blockchain_format.coin import Coin
-from chia.types.spend_bundle import SpendBundle
+from cactus.types.blockchain_format.coin import Coin
+from cactus.types.spend_bundle import SpendBundle
 from cdv.test import CoinWrapper
 from cdv.test import setup as setup_test
 
@@ -31,7 +31,7 @@ class TestPasswordCoin:
             # This will use 500 mojos to create our password on the test blockchain.
             password_coin: Optional[CoinWrapper] = await alice.launch_smart_coin(
                 create_coin_puzzle(
-                    create_coin_password_hash_from_string('chiaiscool')),
+                    create_coin_password_hash_from_string('cactusiscool')),
                 amt=500
             )
 
@@ -45,7 +45,7 @@ class TestPasswordCoin:
                 password_coin,
                 pushtx=False,  # Don't immediately push the coin to the network
                 args=solution_for_password(
-                    password_coin.as_coin(), "chiaiscool", alice.puzzle_hash),
+                    password_coin.as_coin(), "cactusiscool", alice.puzzle_hash),
             )
 
             # Spend password coin

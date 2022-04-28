@@ -3,15 +3,15 @@ import hashlib
 # Related to coin signing
 from blspy import G2Element
 
-from chia.rpc.wallet_rpc_client import WalletRpcClient
-from chia.rpc.full_node_rpc_client import FullNodeRpcClient
+from cactus.rpc.wallet_rpc_client import WalletRpcClient
+from cactus.rpc.full_node_rpc_client import FullNodeRpcClient
 
-from chia.util.config import load_config
-from chia.util.bech32m import decode_puzzle_hash
-from chia.util.default_root import DEFAULT_ROOT_PATH
+from cactus.util.config import load_config
+from cactus.util.bech32m import decode_puzzle_hash
+from cactus.util.default_root import DEFAULT_ROOT_PATH
 
-from chia.types.coin_spend import CoinSpend
-from chia.types.spend_bundle import SpendBundle
+from cactus.types.coin_spend import CoinSpend
+from cactus.types.spend_bundle import SpendBundle
 
 from password.password_driver import (
     create_coin_puzzle,
